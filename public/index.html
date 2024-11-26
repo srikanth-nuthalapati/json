@@ -136,7 +136,7 @@
                 number: number,
                 password: password
             }
-            fetch("http://localhost:3000/users",{
+            fetch("https://json-dort.onrender.com/users",{
                 method: "POST",
                 headers: {'content-type':'application/json'},
                 body: JSON.stringify(obj)
@@ -149,7 +149,7 @@
         function login(){
             let number = document.getElementById("Number").value;
             let password = document.getElementById("Password").value;
-            fetch("http://localhost:3000/users")
+            fetch("https://json-dort.onrender.com/users")
             .then(response => response.json())
             .then(res =>{
                 let user = res.find(user => user.number == number && user.password == password)
@@ -164,13 +164,13 @@
         }
 
         function reset(){
-            fetch("http://localhost:3000/users")
+            fetch("https://json-dort.onrender.com/users")
             .then(response => response.json())
             .then(data =>{
                 let user = data.find(user => user.number == document.getElementById("Num").value)
                 if (user){
                   let id = user.id;
-                   fetch(`http://localhost:3000/users/${id}`,{
+                   fetch(`https://json-dort.onrender.com/users/${id}`,{
                         method: "PATCH",
                         headers: {'content-type':'application/json'},
                         body: JSON.stringify({
