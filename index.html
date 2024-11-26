@@ -143,7 +143,7 @@
             })
             .then(response => response.json())
             .then(res => alert("signup success"))
-            .catch(err => console.log("signup fail"))
+            .catch(err => alert(err))
         }
 
         function login(){
@@ -160,7 +160,7 @@
                     alert("login fail")
                 }
             })
-            .catch(err => console.log("login fail"))
+            .catch(err => alert(err))
         }
 
         function reset(){
@@ -178,12 +178,12 @@
                         })
                     })
                     .then(res => alert("reset success"))
-                    .catch(err => console.log("reset fail"))
+                    .catch(err => alert("reset fail"))
                 }
                 else
                     alert("number not found")
             })
-            .catch(err => console.log("data not added"))
+            .catch(err => alert(err))
         }
 
     </script>
